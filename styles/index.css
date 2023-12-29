@@ -1,23 +1,37 @@
 @import "./base.css";
 
-.main {
-  padding: 7.5rem;
-}
-.main__heading {
+.home .main__heading {
   font-size: 8rem;
   font-weight: bold;
 }
-
-.main__sub-heading {
+.home .main__sub-heading {
   font-size: 2.5rem;
 }
 
 .button-container {
   display: flex;
   margin-top: 6.25rem;
-    
 }
 
 .button__icon {
   vertical-align: middle;
+}
+.home .menu path {
+  fill: var(--color-text-on-primary);
+}
+.home .close path {
+  fill: var(--color-text-on-primary);
+}
+@media (max-width: 1220px) {
+  .home .main__heading {
+    font-size: 70px;
+  }
+}
+@media (max-width: 590px) {
+  .home .main__heading {
+    font-size: 40px;
+  }
+  .home .main__sub-heading {
+    font-size: 24px;
+  }
 }

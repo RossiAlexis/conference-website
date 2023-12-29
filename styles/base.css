@@ -1,6 +1,7 @@
 :root {
   --color-primary: #ff7b54;
   --color-text-on-primary: #ffffff;
+  --color-text-on-secondary: #000000;
   --color-button-border: var(--color-text-on-primary);
   --color-button-primary-bg: var(--color-text-on-primary);
   --color-button-primary-text: var(--color-primary);
@@ -15,6 +16,16 @@ body {
   font-family: var(--font-family);
 }
 
+.body--primary {
+  background-color: var(--color-primary);
+  color: var(--color-text-on-primary);
+}
+.body--secondary {
+  background-color: var(--color-text-on-primary);
+  color: var(--color-primary);
+}
+
+h2,
 p {
   margin: 0;
 }
@@ -49,7 +60,9 @@ a {
   margin-inline-end: 2.25rem;
   font-size: 20px;
 }
-
+.main {
+  padding: 7.5rem;
+}
 .button {
   font-size: 2rem;
   padding: 0 4rem;
@@ -74,4 +87,82 @@ a {
 .button--secondary {
   background-color: var(--color-button-secondary-bg);
   color: var(--color-button-secondary-text);
+}
+.menu {
+  display: none;
+}
+.close {
+  display: none;
+}
+
+.menu,
+.close {
+  cursor: pointer;
+}
+@media (max-width: 1220px) {
+  .button {
+    font-size: 24px;
+    padding: 0 32px;
+    height: 70px;
+  }
+  .button img {
+    width: 20px;
+  }
+}
+@media (max-width: 840px) {
+  .menu {
+    display: block;
+  }
+  .nav {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--color-primary);
+    top: 60px;
+    left: -100%;
+    padding-top: 60px;
+    transition: left 0.2s linear;
+  }
+
+  .nav--visible {
+    left: 0;
+  }
+  .nav__list {
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+  }
+  .nav__list-item {
+    font-size: 60px;
+    font-weight: bold;
+  }
+  .header {
+    display: grid;
+    grid-template-columns: 33px 1fr 34px;
+    justify-items: center;
+  }
+  .menu--hide {
+    display: none;
+  }
+  .close--show {
+    display: block;
+  }
+  .body--no-scroll {
+    overflow: hidden;
+  }
+}
+@media (max-width: 815px) {
+  .main {
+    padding: 75px;
+  }
+}
+@media (max-width: 700px) {
+  .button {
+    font-size: 16px;
+    margin-top: 24px;
+  }
+  .button-container {
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
 }
